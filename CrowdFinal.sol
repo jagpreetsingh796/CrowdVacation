@@ -1,13 +1,7 @@
 pragma solidity ^0.5.0;
 
 
-interface rewardinterface {
-    function addMinters(address _contributor) external;
-    function removeMinters(address _contributor) external;
-    function isMinter(address _contributor) external returns(bool);
-    function trigger() external returns (bool);
-    function withdraw() external returns (bool);
-}
+import "./Rewards.sol";
 
 contract CrowdFinal
 {
@@ -22,13 +16,14 @@ contract CrowdFinal
     uint256 public goal;
     uint256 public milestone_size;
     uint256 public milestone_num;
-    address public donarContractAddress;
-    address payable owner;
+    address public donarContractAddress=address(this);
+    uint public balance;
+    address payable public owner;
     mapping(address => Contributor) public contributorsDB;
-    rewardinterface rewardsContract;
+    Rewards public rewardsContract;
     
     constructor(address _rewardsContract, uint256 _goal) public {
-        rewardsContract=rewardinterface(_rewardsContract);
+        rewardsContract=Rewards(_rewardsContract);
         if(!rewardsContract.isMinter(donarContractAddress)) {
             rewardsContract.addMinters(donarContractAddress);
         }
@@ -36,6 +31,7 @@ contract CrowdFinal
        owner=msg.sender;
        goal=_goal;
        milestone_size=goal/milestone_num;
+       milestone_size=milestone_size;
        donarContractAddress = address(this);
        
     }
@@ -57,13 +53,16 @@ contract CrowdFinal
     
      function donate() public isAuthorized payable
      {
-         require(msg.value>0.01 ether,"Less than minimum amount");
-         require(milestone_num!=5,"The campaign is over");
+         require(msg.value>0.01 ether,"Lower bound");
+         require(msg.value<3 ether,"Upper bound");
+         require(milestone_num!=0,"The campaign is over");
+         balance=donarContractAddress.balance/(1 ether) ;
          contributorsDB[msg.sender].donation += msg.value;
-         if(donarContractAddress.balance >= milestone_size) {
-            milestone_num=milestone_num+1;
+         if(balance >= milestone_size) {
+            milestone_num=milestone_num-1;
             rewardsContract.trigger();
             owner.transfer(donarContractAddress.balance);
+             balance=0;
         }
          
          
