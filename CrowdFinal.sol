@@ -22,13 +22,13 @@ contract CrowdFinal
     mapping(address => Contributor) public contributorsDB;
     Rewards public rewardsContract;
     
-    constructor(address _rewardsContract, uint256 _goal) public {
+    constructor( address _rewardsContract,uint256 _goal) public {
         rewardsContract=Rewards(_rewardsContract);
         if(!rewardsContract.isMinter(donarContractAddress)) {
             rewardsContract.addMinters(donarContractAddress);
         }
        milestone_num=5;
-       owner=msg.sender;
+       owner=tx.origin;
        goal=_goal;
        milestone_size=goal/milestone_num;
        milestone_size=milestone_size;
@@ -37,11 +37,11 @@ contract CrowdFinal
     }
     
     modifier isAuthorized() {
-        require(contributorsDB[msg.sender].isContributor, "caller is not a authorized Contributor");
+        require(contributorsDB[tx.origin].isContributor, "caller is not a authorized Contributor");
         _; 
     }
     function addContributor(address _contributor) public {
-        require(!contributorsDB[msg.sender].isContributor, "contributor already added");
+        require(!contributorsDB[tx.origin].isContributor, "contributor already added");
         contributorsDB[_contributor].isContributor = true;
         
     }
@@ -57,7 +57,7 @@ contract CrowdFinal
          require(msg.value<3 ether,"Upper bound");
          require(milestone_num!=0,"The campaign is over");
          balance=donarContractAddress.balance/(1 ether) ;
-         contributorsDB[msg.sender].donation += msg.value;
+         contributorsDB[tx.origin].donation += msg.value;
          if(balance >= milestone_size) {
             milestone_num=milestone_num-1;
             rewardsContract.trigger();
@@ -71,6 +71,98 @@ contract CrowdFinal
     {
         rewardsContract.withdraw();
     }
+    
+    
+    
+}
+
+contract Factory {
+    
+    uint public CrowdId;
+    
+    mapping(uint => CrowdFinal) CrowdFinalList;
+    address  public rewards;
+    uint256 goal;
+    
+   
+    
+    function deploy(uint256 _goal,address _rewards) public {
+        CrowdId++;
+        goal=_goal;
+        rewards=_rewards;
+       
+      CrowdFinal f = new CrowdFinal(rewards,goal);
+        CrowdFinalList[CrowdId] = f;
+       
+    }
+    
+    function getfactoryById(uint _id) public view returns (CrowdFinal) {
+      return CrowdFinalList[_id];
+    }
+}
+
+contract Dashboard
+{
+    
+    uint public CrowdId;
+    Factory public database;
+   
+      
+      constructor(address _database) public {
+        database = Factory(_database);
+    }
+    
+    function newFactory(uint256 _goal,address _rewards) public  {
+        
+        CrowdId++;
+        
+        database.deploy(_goal,_rewards);
+    }
+    function getid()public view returns(uint)
+    {
+        return CrowdId;
+    }
+    function getaddContributorId(uint _id,address contributor) public  {
+        CrowdFinal  f=CrowdFinal(database.getfactoryById(_id));
+        f.addContributor(contributor);
+       
+       
+    }
+    
+function getremoveContributorId(uint _id,address contributor) public  {
+        CrowdFinal  f=CrowdFinal(database.getfactoryById(_id));
+        f.removeContributor(contributor);
+       
+       
+    }
+function getdonatebyId(uint _id)  payable public  {
+        CrowdFinal  f=CrowdFinal(database.getfactoryById(_id));
+        f.donate.value(msg.value)();
+       
+       
+    }
+ function getwithdrawbyId(uint _id)  payable public  {
+        CrowdFinal  f=CrowdFinal(database.getfactoryById(_id));
+        f.withdraw();
+       
+       
+    }   
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
