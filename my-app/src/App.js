@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateVacation from './CreateVacation'
+import AddContributor from './AddContributor'
 import './App.css';
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
     <div className="App">
       <h4>Create your contract here</h4>  
       <CreateVacation/>
+      <h4>AddContributor</h4>  
+      <AddContributor/>
 
     </div>
   );
