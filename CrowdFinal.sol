@@ -68,7 +68,7 @@ contract CrowdFinal
          
      }
     function withdraw()public isAuthorized 
-    {
+    {    rewardsContract.trigger();
         rewardsContract.withdraw();
     }
     
