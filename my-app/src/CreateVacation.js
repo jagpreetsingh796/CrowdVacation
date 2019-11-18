@@ -15,13 +15,14 @@ class CreateVacation extends React.Component
             Name:"",
             Goal:"",
             Id:"",
+            Name1:"",
             // loading1: false,
             // loading2:false,
            
         }
         this.handlechange=this.handlechange.bind(this)
         this.handlesubmit=this.handlesubmit.bind(this)
-        // this.handlesubmit1=this.handlesubmit1.bind(this)
+        this.handlesubmit1=this.handlesubmit1.bind(this)
     }
     handlechange=(e) =>
     {
@@ -198,9 +199,32 @@ class CreateVacation extends React.Component
             Name:"",
             Goal:""
           })
-          debugger
+          
           
         
+
+    }
+    handlesubmit1= async(e)=>
+    {
+        e.preventDefault()
+        let ethereum = window.ethereum;
+        let addr=await ethereum.enable()
+        const db = firebase.firestore();
+        const userRef1 = await db.collection("users").where('Name' , '==' ,this.state.Name1).get()
+        console.log("the user",userRef1)
+        let Tokenid
+        userRef1.docs.forEach(async (Ele) => {
+            console.log("the id is", Ele.data().Id)
+            // console.log("the owner address is", Ele.data().owner)
+
+            Tokenid=Ele.data().Id
+        })
+        console.log("The token id is",Tokenid)
+        this.setState({
+            Id:Tokenid,
+            Name1:"",
+            
+        })
 
     }
     render()
@@ -212,6 +236,15 @@ class CreateVacation extends React.Component
                  <input type="text"  name="Goal" label="Goal" onChange={this.handlechange}  value={this.state.Goal} placeholder="Enter Amount (ex. ETH)"/>
                  <button type="submit" >Submit</button>
 
+
+                </form>
+                <form onSubmit={this.handlesubmit1}>
+                 <h4>Check your ID</h4>
+                 <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CONTRACT NAME"/>
+                 <button type="submit" >Submit</button>
+                 <br/>
+                
+                {this.state.Id !== "" ? <h3 style={{textAlign: 'center'}}>The Id is {this.state.Id}</h3> : ""}
 
                 </form>
             </div>
