@@ -3,6 +3,7 @@ import CreateVacation from './CreateVacation'
 import AddContributor from './AddContributor'
 import RemoveContributor from './RemoveContributor'
 import Donate from './Donate'
+import Withdraw from './Withdraw'
 import './App.css';
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <RemoveContributor/>
       <h4>Make Donation</h4>  
       <Donate/>
+      <h4>Withdraw</h4>  
+      <Withdraw/>
 
     </div>
   );

@@ -176,7 +176,10 @@ class RemoveContributor extends React.Component
         // let rewards="0x8566f909e9af442dcfb075bfc48e489dd2f43019"
         
         let tx1= await contract.getremoveContributorId(this.state.Id,this.state.Address)
-      
+        this.setState({
+            Id:"",
+            Address:""
+          })
         
     }
     render()

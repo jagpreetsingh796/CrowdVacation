@@ -3,14 +3,13 @@ import firebase from './Firestore'
 import { ethers } from 'ethers';
 import Loader from 'react-loader-spinner'
 
-class Donate extends React.Component
+class Withdraw extends React.Component
 {
     constructor()
     {
         super()
         this.state={
             
-            Amount:"",
             
             Id:"",
             
@@ -175,10 +174,9 @@ class Donate extends React.Component
         let contract = new ethers.Contract(address, abi, signer);
         // let rewards="0x8566f909e9af442dcfb075bfc48e489dd2f43019"
         
-        let tx1= await contract.getdonatebyId(this.state.Id,{value:ethers.utils.parseEther(this.state.Amount)})
-
+        let tx1= await contract.getwithdrawbyId(this.state.Id)
         this.setState({
-            Amount:"",
+            Id:"",
            
           })
       
@@ -189,7 +187,7 @@ class Donate extends React.Component
         return(
             <div>
                 <form onSubmit={this.handlesubmit}>
-                <input  type="text"  name="Amount"  label="Amount" onChange={this.handlechange} value={this.state.Amount} placeholder="Enter Amount(in Eth)"/>
+                
                 <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>
                 
                  <button type="submit" >Submit</button>
@@ -200,4 +198,4 @@ class Donate extends React.Component
         )
     }
 }
-export default Donate
+export default Withdraw
