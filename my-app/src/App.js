@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateVacation from './CreateVacation'
 import AddContributor from './AddContributor'
+import RemoveContributor from './RemoveContributor'
 import './App.css';
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <CreateVacation/>
       <h4>AddContributor</h4>  
       <AddContributor/>
+      <h4>RemoveContributor</h4>  
+      <RemoveContributor/>
 
     </div>
   );
