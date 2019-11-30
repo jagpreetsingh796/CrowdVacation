@@ -2,6 +2,7 @@ import React from 'react';
 import CreateVacation from './CreateVacation'
 import AddContributor from './AddContributor'
 import RemoveContributor from './RemoveContributor'
+import Donate from './Donate'
 import './App.css';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <AddContributor/>
       <h4>RemoveContributor</h4>  
       <RemoveContributor/>
+      <h4>Make Donation</h4>  
+      <Donate/>
 
     </div>
   );
