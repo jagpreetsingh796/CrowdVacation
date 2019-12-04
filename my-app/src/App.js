@@ -39,7 +39,7 @@ function App() {
       </div>
 
       <div className="section">
-        <p>&copy; Jagpreet Singh (LAMBE NAAM WALA)</p>
+        <p>&copy; Jagpreet Singh</p>
       </div>
     </div>
   );
