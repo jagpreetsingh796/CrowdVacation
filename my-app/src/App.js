@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <div className="header-text">
-        <h1>A Fancy Title</h1>
+        <h1>Crowd Sourcing</h1>
       </div>
 
       <div className="section">
