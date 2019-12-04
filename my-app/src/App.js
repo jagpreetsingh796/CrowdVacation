@@ -9,17 +9,38 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h4>Create your contract here</h4>  
-      <CreateVacation/>
-      <h4>AddContributor</h4>  
-      <AddContributor/>
-      <h4>RemoveContributor</h4>  
-      <RemoveContributor/>
-      <h4>Make Donation</h4>  
-      <Donate/>
-      <h4>Withdraw</h4>  
-      <Withdraw/>
+      <div className="header-text">
+        <h1>A Fancy Title</h1>
+      </div>
 
+      <div className="section">
+        <h4>Create your contract here</h4>  
+        <CreateVacation/>
+      </div>
+
+      <div className="section">
+        <h4>AddContributor</h4>  
+        <AddContributor/>
+      </div>
+
+      <div className="section">
+        <h4>RemoveContributor</h4>  
+        <RemoveContributor/>
+      </div>
+
+      <div className="section">
+        <h4>Make Donation</h4>  
+        <Donate/>
+      </div>
+
+      <div className="section">
+        <h4>Withdraw</h4>  
+        <Withdraw/>
+      </div>
+
+      <div className="section">
+        <p>&copy; Jagpreet Singh (LAMBE NAAM WALA)</p>
+      </div>
     </div>
   );
 }

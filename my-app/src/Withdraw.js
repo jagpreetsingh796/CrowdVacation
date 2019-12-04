@@ -9,22 +9,19 @@ class Withdraw extends React.Component
     {
         super()
         this.state={
-            
-            
             Id:"",
-            
-           
         }
         this.handlechange=this.handlechange.bind(this)
         this.handlesubmit=this.handlesubmit.bind(this)
-        
     }
+
     handlechange=(e) =>
     {
         this.setState({
             [e.target.name]:e.target.value
         },console.log(this.state))
     }
+
     handlesubmit= async(e)=>
     {
         e.preventDefault();
@@ -187,12 +184,13 @@ class Withdraw extends React.Component
         return(
             <div>
                 <form onSubmit={this.handlesubmit}>
-                
-                <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>
-                
-                 <button type="submit" >Submit</button>
+                    <div className="form-inputs">
+                        <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>
+                    </div>
 
-
+                    <div className="submit-container">
+                        <button type="submit" >Submit</button>
+                    </div>
                 </form>
             </div>
         )

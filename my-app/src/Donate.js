@@ -189,12 +189,14 @@ class Donate extends React.Component
         return(
             <div>
                 <form onSubmit={this.handlesubmit}>
-                <input  type="text"  name="Amount"  label="Amount" onChange={this.handlechange} value={this.state.Amount} placeholder="Enter Amount(in Eth)"/>
-                <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>
+                    <div className="form-inputs">
+                        <input  type="text"  name="Amount"  label="Amount" onChange={this.handlechange} value={this.state.Amount} placeholder="Enter Amount(in Eth)"/>
+                        <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>
+                    </div>
                 
-                 <button type="submit" >Submit</button>
-
-
+                    <div className="submit-container">
+                        <button type="submit" >Submit</button>
+                    </div>
                 </form>
             </div>
         )

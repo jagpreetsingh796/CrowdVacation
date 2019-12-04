@@ -232,21 +232,29 @@ class CreateVacation extends React.Component
         return(
             <div>
                 <form onSubmit={this.handlesubmit}>
-                <input  type="text"  name="Name"  label="Name" onChange={this.handlechange} value={this.state.Name} placeholder="Enter Name"/>
-                 <input type="text"  name="Goal" label="Goal" onChange={this.handlechange}  value={this.state.Goal} placeholder="Enter Amount (ex. ETH)"/>
-                 <button type="submit" >Submit</button>
+                    <div className="form-inputs">
+                        <input  type="text"  name="Name"  label="Name" onChange={this.handlechange} value={this.state.Name} placeholder="Enter Name"/>
+                        <input type="text"  name="Goal" label="Goal" onChange={this.handlechange}  value={this.state.Goal} placeholder="Enter Amount (ex. ETH)"/>
+                    </div>
 
-
+                    <div className="submit-container">
+                        <button type="submit" >Submit</button>
+                    </div>
                 </form>
+
+                <h4>Check your ID</h4>
+                
                 <form onSubmit={this.handlesubmit1}>
-                 <h4>Check your ID</h4>
-                 <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CONTRACT NAME"/>
-                 <button type="submit" >Submit</button>
-                 <br/>
+                    <div className="form-inputs">
+                        <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CONTRACT NAME"/>
+                    </div>
+
+                    <div className="submit-container">
+                        <button type="submit" >Submit</button>
+                    </div>
+                </form>
                 
                 {this.state.Id !== "" ? <h3 style={{textAlign: 'center'}}>The Id is {this.state.Id}</h3> : ""}
-
-                </form>
             </div>
         )
     }
