@@ -12,9 +12,10 @@ function App() {
       <div className="header-text">
 
         <h1>Crowd Sourcing</h1>
+        <h2>Start own personalised campaign using ERC1973</h2>
       </div>
-      <div className="section">
-      <h2>Start own personalised campaign using ERC1973</h2>
+      <div className="section4">
+      
       <h3>Steps to start your campaign</h3>
    <ul>
   <li ><h4>Set your fundraising goal</h4></li>
