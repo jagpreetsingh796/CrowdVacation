@@ -10,11 +10,22 @@ function App() {
   return (
     <div className="App">
       <div className="header-text">
+
         <h1>Crowd Sourcing</h1>
       </div>
-
       <div className="section">
-        <h4>Create your contract here</h4>  
+      <h2>Start own personalised campaign using ERC1973</h2>
+      <h3>Steps to start your campaign</h3>
+   <ul>
+  <li ><h4>Set your fundraising goal</h4></li>
+  <li><h4>Add Participants</h4></li>
+  <li><h4>Accept donations (minimum 1 ether)</h4></li>
+  <li><h4>Donors get appropriate rewards</h4> </li>
+
+  </ul>  
+</div>
+      <div className="section">
+        <h4>Start your campaign</h4>  
         <CreateVacation/>
       </div>
 
