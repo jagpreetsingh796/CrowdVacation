@@ -170,7 +170,7 @@ class AddContributor extends React.Component
                 "type": "function"
             }
         ]
-        let address="0xc5352569c97a485fc359444fcd6ab6c9ed25d797"
+        let address="0xb25293994ceedd9e668caaf4cac919d44f514bef"
         
         let contract = new ethers.Contract(address, abi, signer);
         // let rewards="0x8566f909e9af442dcfb075bfc48e489dd2f43019"
