@@ -186,6 +186,12 @@ class RemoveContributor extends React.Component
     {
         return(
             <div>
+                <div>
+                    <ul>
+                        <li>Changed your mind? We're sorry to see you go :(</li>
+                    </ul>
+                </div>
+
                 <form onSubmit={this.handlesubmit}>
                     <div className="form-inputs">
                         <input type="text" name="Address"  label="Address" onChange={this.handlechange} value={this.state.Address} placeholder="Enter Address"/>

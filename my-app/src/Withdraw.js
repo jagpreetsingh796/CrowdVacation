@@ -183,6 +183,12 @@ class Withdraw extends React.Component
     {
         return(
             <div>
+                <div>
+                    <ul>
+                        <li>Time to check for some rewards!</li>
+                    </ul>
+                </div>
+
                 <form onSubmit={this.handlesubmit}>
                     <div className="form-inputs">
                         <input  type="text"  name="Id"  label="Id" onChange={this.handlechange} value={this.state.Id} placeholder="Enter Id"/>

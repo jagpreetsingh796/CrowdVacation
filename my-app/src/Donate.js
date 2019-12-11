@@ -188,6 +188,12 @@ class Donate extends React.Component
     {
         return(
             <div>
+                <div>
+                    <ul>
+                        <li>Be a good soul, donate to a vacation campaign now!</li>
+                    </ul>
+                </div>
+
                 <form onSubmit={this.handlesubmit}>
                     <div className="form-inputs">
                         <input  type="text"  name="Amount"  label="Amount" onChange={this.handlechange} value={this.state.Amount} placeholder="Enter Amount(in Eth)"/>

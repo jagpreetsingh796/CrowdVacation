@@ -231,6 +231,12 @@ class CreateVacation extends React.Component
     {
         return(
             <div>
+                <div>
+                    <ul>
+                        <li>Select a name for your Vacation Campaign</li>
+                        <li>Set the amount to get waiver for</li>
+                    </ul>
+                </div>
                 <form onSubmit={this.handlesubmit}>
                     <div className="form-inputs">
                         <input  type="text"  name="Name"  label="Name" onChange={this.handlechange} value={this.state.Name} placeholder="Enter Name"/>
@@ -242,8 +248,14 @@ class CreateVacation extends React.Component
                     </div>
                 </form>
 
-                <h4>Check your ID</h4>
+                {/* <h4>Check your ID</h4> */}
                 
+                <div>
+                    <ul>
+                        <li>Search for your ID by the name of your campaign</li>
+                    </ul>
+                </div>
+
                 <form onSubmit={this.handlesubmit1}>
                     <div className="form-inputs">
                         <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CONTRACT NAME"/>

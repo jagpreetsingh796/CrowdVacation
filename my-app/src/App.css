@@ -3,15 +3,35 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #ddd;
+  background-color: #eee;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-image: url(https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1901&q=80);
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 100vw;
 }
 
 .header-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   text-align: center;
   background-color: black;
   color: white;
   box-shadow: 5px 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-text > h1 {
+  margin-left: 3em;
+}
+
+.header-text > h2 {
+  margin-right: 3em;
 }
 
 .section {
@@ -21,7 +41,15 @@
   text-align: center;
   border-bottom: 3px solid black;
   width: 100vw;
-  height: 300px;
+  height: 350px;
+}
+
+li {
+  font-style: italic;
+  font-weight: bold;
+  color: brown;
+  font-size: large;
+  list-style: none;
 }
 
 .submit-container {
