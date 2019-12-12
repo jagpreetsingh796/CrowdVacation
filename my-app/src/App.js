@@ -25,7 +25,7 @@ function App() {
             <li><h4>A unique id is generated for your campaign</h4></li>
             <li><h4>Using this id people can contribute towards your campaign</h4></li>
             <li><h4>Contributors can unregister themselves anytime</h4></li>
-          <li><h4> If contributor continue to be with your campaign they can claim rewards.</h4> </li>
+          <li><h4> If contributor continue to be with your campaign they can claim rewards.Which are in the form of erc20 tokens.</h4> </li>
           
             
 
