@@ -185,7 +185,8 @@ class Withdraw extends React.Component
             <div>
                 <div>
                     <ul>
-                        <li>Time to check for some rewards!</li>
+                        <li>Have you donated to a campaign?</li>
+                         <li>Enter the id of that campaign to claim your rewards</li>
                     </ul>
                 </div>
 

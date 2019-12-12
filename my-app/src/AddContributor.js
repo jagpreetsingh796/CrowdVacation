@@ -189,7 +189,7 @@ class AddContributor extends React.Component
             <div>
                 <div>
                     <ul>
-                        <li>Be a good soul, register yourself to a vacation campaign now!</li>
+                        <li>Register yourself with a campaign by providing the id and your ethereum address before making donations</li>
                     </ul>
                 </div>
 

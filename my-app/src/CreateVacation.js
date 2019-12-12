@@ -233,8 +233,9 @@ class CreateVacation extends React.Component
             <div>
                 <div>
                     <ul>
+                        <li>Start your campaign here</li>
                         <li>Select a name for your Vacation Campaign</li>
-                        <li>Set the amount to get waiver for</li>
+                        <li>Set the goal amount</li>
                     </ul>
                 </div>
                 <form onSubmit={this.handlesubmit}>
@@ -253,12 +254,14 @@ class CreateVacation extends React.Component
                 <div>
                     <ul>
                         <li>Search for your ID by the name of your campaign</li>
+                        <li>Share this id with your friends and ask them to register and donate towards your campaign.</li>
+                        
                     </ul>
                 </div>
 
                 <form onSubmit={this.handlesubmit1}>
                     <div className="form-inputs">
-                        <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CONTRACT NAME"/>
+                        <input type="text" name="Name1" onChange={this.handlechange} value={this.state.Name1} placeholder="YOUR CAMPAIGN NAME"/>
                     </div>
 
                     <div className="submit-container">

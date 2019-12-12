@@ -188,7 +188,7 @@ class RemoveContributor extends React.Component
             <div>
                 <div>
                     <ul>
-                        <li>Changed your mind? We're sorry to see you go :(</li>
+                        <li>You can withdraw from a campaign here</li>
                     </ul>
                 </div>
 

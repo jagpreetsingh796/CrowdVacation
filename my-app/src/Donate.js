@@ -190,7 +190,7 @@ class Donate extends React.Component
             <div>
                 <div>
                     <ul>
-                        <li>Be a good soul, donate to a vacation campaign now!</li>
+                        <li>Make your donations here by providing the id of the campaign you are registered for.</li>
                     </ul>
                 </div>
 

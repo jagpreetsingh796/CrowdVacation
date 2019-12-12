@@ -24,6 +24,8 @@ function App() {
             <li><h4>Add Participants</h4></li>
             <li><h4>Accept donations (minimum 1 ether)</h4></li>
             <li><h4>Donors get appropriate rewards</h4> </li>
+            
+
         </ul>  
       </div>
 
