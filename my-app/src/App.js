@@ -20,10 +20,13 @@ function App() {
         <h3>Steps to start your campaign</h3>
         
         <ul>
+            <li ><h4>Select the name of your  vacation campaign</h4></li>
             <li ><h4>Set your fundraising goal</h4></li>
-            <li><h4>Add Participants</h4></li>
-            <li><h4>Accept donations (minimum 1 ether)</h4></li>
-            <li><h4>Donors get appropriate rewards</h4> </li>
+            <li><h4>A unique id is generated for your campaign</h4></li>
+            <li><h4>Using this id people can contribute towards your campaign</h4></li>
+            <li><h4>Contributors can unregister themselves anytime</h4></li>
+          <li><h4> If contributor continue to be with your campaign they can claim rewards.</h4> </li>
+          
             
 
         </ul>  
